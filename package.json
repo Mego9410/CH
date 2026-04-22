@@ -1,7 +1,7 @@
 {
   "name": "chronical-health",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "next": "16.2.4"
   },
   "scripts": {
