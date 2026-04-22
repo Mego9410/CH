@@ -147,7 +147,7 @@ export function PillarsWithPills() {
                   type="button"
                   onClick={() => setActive(p)}
                   className={[
-                    "h-10 rounded-full px-4 text-[13px] font-semibold tracking-tight transition",
+                    "h-11 rounded-full px-5 text-[13px] font-semibold tracking-tight transition",
                     isActive
                       ? "bg-[var(--accent)] text-white shadow-[0_1px_0_rgba(0,0,0,0.06)]"
                       : "bg-transparent text-[var(--muted)] hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]",

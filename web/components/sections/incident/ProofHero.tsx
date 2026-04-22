@@ -35,7 +35,7 @@ export function ProofHero() {
         <Reveal delayMs={120}>
           <div className="mt-12 overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--surface)] shadow-[0_20px_60px_rgba(15,18,25,0.14)]">
             <div className="grid gap-0 lg:grid-cols-[1.6fr_1fr]">
-              <div className="relative min-h-[240px] bg-[linear-gradient(110deg,rgba(30,58,95,0.12),rgba(30,58,95,0.03),rgba(255,255,255,0.15))] p-10">
+              <div className="relative min-h-[240px] bg-[linear-gradient(110deg,rgba(30,58,95,0.12),rgba(30,58,95,0.03),rgba(255,255,255,0.15))] p-6 sm:p-10">
                 <div className="text-[12px] font-semibold uppercase tracking-wide text-[var(--muted)]">
                   Example deliverable (placeholder)
                 </div>
@@ -61,7 +61,7 @@ export function ProofHero() {
                 </div>
               </div>
 
-              <div className="p-10">
+              <div className="p-6 sm:p-10">
                 <div className="font-serif text-[22px] leading-8 tracking-tight">
                   “I feel empowered to have all my NHS records in one place.”
                 </div>

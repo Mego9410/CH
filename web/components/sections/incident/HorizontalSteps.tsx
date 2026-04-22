@@ -37,10 +37,10 @@ export function HorizontalSteps({
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute left-0 right-0 top-[18px] h-px bg-[color-mix(in_srgb,var(--foreground)_10%,transparent)]"
+                className="absolute left-0 right-0 top-[18px] hidden h-px bg-[color-mix(in_srgb,var(--foreground)_10%,transparent)] md:block"
               />
 
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-5">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-5">
                 {steps.map((s, idx) => (
                   <Reveal key={s.number} delayMs={idx * 60}>
                     <div className="text-center">
@@ -57,7 +57,7 @@ export function HorizontalSteps({
                         {s.title}
                       </div>
                       {s.subtitle ? (
-                        <div className="mx-auto mt-1 max-w-[160px] text-[12px] leading-5 text-[var(--muted)]">
+                        <div className="mx-auto mt-1 max-w-[220px] text-[12px] leading-5 text-[var(--muted)]">
                           {s.subtitle}
                         </div>
                       ) : null}

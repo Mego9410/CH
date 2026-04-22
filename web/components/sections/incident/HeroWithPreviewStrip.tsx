@@ -16,7 +16,7 @@ export function HeroWithPreviewStrip({
 }) {
   return (
     <div>
-      <section className="pt-44 sm:pt-60">
+      <section className="pt-28 sm:pt-40 lg:pt-60">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="font-serif text-balance text-[46px] leading-[0.98] tracking-tight sm:text-[68px]">
