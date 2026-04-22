@@ -1,6 +1,5 @@
 {
   "installCommand": "cd web && npm ci",
-  "buildCommand": "cd web && npm run build",
-  "outputDirectory": "web/.next"
+  "buildCommand": "cd web && npm run build"
 }
 
