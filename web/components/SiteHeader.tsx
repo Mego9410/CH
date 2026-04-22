@@ -28,7 +28,9 @@ export function SiteHeader() {
 
   useEffect(() => {
     // Close menu on route change.
-    setOpen(false);
+    if (!open) return;
+    queueMicrotask(() => setOpen(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {

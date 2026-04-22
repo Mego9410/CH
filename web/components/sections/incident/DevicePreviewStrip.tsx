@@ -21,13 +21,9 @@ function ParallaxHover({
   radiusPx?: number;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [enabled, setEnabled] = useState(false);
+  const [enabled] = useState(() => !prefersReducedMotion());
   const raf = useRef<number | null>(null);
   const latest = useRef<{ cx: number; cy: number } | null>(null);
-
-  useEffect(() => {
-    setEnabled(!prefersReducedMotion());
-  }, []);
 
   const baseStyle = useMemo(() => {
     return {

@@ -20,10 +20,7 @@ export function Reveal({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (prefersReducedMotion()) {
-      setVisible(true);
-      return;
-    }
+    if (prefersReducedMotion()) return;
 
     const el = ref.current;
     if (!el) return;
@@ -48,6 +45,7 @@ export function Reveal({
       className={[
         "transition-all duration-700",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[10px]",
+        "motion-reduce:opacity-100 motion-reduce:translate-y-0",
         className,
       ]
         .filter(Boolean)

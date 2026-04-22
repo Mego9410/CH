@@ -11,7 +11,6 @@ export type BentoItem = {
 export function BentoGrid({
   heading,
   items,
-  cta,
 }: {
   heading: { title: string; body?: string; linkLabel?: string; linkHref?: string };
   items: BentoItem[];

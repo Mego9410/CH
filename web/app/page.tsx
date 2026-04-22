@@ -3,15 +3,14 @@ import {
   findSection,
   findSubsection,
   sectionText,
+  type MarkdownSection,
 } from "@/lib/content";
 import {
   extractHeroFromHome,
   extractSubsectionsAsCards,
 } from "@/lib/extract";
-import { Stepper } from "@/components/sections/Stepper";
 import { Quote } from "@/components/sections/Quote";
 import { CTASection } from "@/components/sections/CTASection";
-import { Container } from "@/components/Container";
 import { HeroWithPreviewStrip } from "@/components/sections/incident/HeroWithPreviewStrip";
 import { PillarsWithPills } from "@/components/sections/incident/PillarsWithPills";
 import { BentoGrid } from "@/components/sections/incident/BentoGrid";
@@ -36,7 +35,8 @@ export default function Home() {
 
   const whyCards = extractSubsectionsAsCards(why);
 
-  const summarySteps = (sectionText(findSection(doc, "How it works (summary)") ?? { title: "", body: "", subsections: [] } as any) || "")
+  const emptySection: MarkdownSection = { title: "", body: "", subsections: [] };
+  const summarySteps = (sectionText(howSummary ?? emptySection) || "")
     .split(/\r?\n/)
     .filter((l) => l.trim().startsWith("- "))
     .map((l) => l.replace(/^\-\s+/, "").trim())
