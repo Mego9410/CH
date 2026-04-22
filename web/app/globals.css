@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #fbf8f2;
+  --foreground: #101113;
+  --muted: #5b5b63;
+  --surface: #fffdf8;
+  --surface-2: #f6f1e7;
+  --border: rgba(16, 17, 19, 0.10);
+  --ring: rgba(30, 58, 95, 0.28);
+
+  --accent: #1e3a5f;
+  --accent-2: #17304f;
+  --accent-wash: rgba(30, 58, 95, 0.10);
+  --accent-wash-2: rgba(30, 58, 95, 0.14);
+
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-wash: var(--accent-wash);
+  --color-accent-wash-2: var(--accent-wash-2);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Reduce overly harsh focus rings while staying accessible. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.font-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+}
+
+.page-canvas {
+  background:
+    radial-gradient(900px 600px at 20% 5%, rgba(30, 58, 95, 0.06), transparent 60%),
+    radial-gradient(900px 600px at 80% 10%, rgba(30, 58, 95, 0.04), transparent 55%),
+    radial-gradient(1200px 800px at 55% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
+    var(--background);
+}
+
+/* Subtle band background for mid-page sections (no spotlight). */
+.page-band {
+  background:
+    radial-gradient(900px 600px at 18% 20%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 62%),
+    radial-gradient(900px 600px at 82% 18%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+    var(--background);
+}
+
+/* Add a soft fade so tinted sections blend into previous content. */
+.bleed-top {
+  position: relative;
+  isolation: isolate;
+}
+
+.bleed-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -96px;
+  height: 128px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--accent) 10%, transparent)
+  );
+  pointer-events: none;
+  z-index: -1;
+}
